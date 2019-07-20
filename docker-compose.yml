@@ -16,7 +16,8 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
- jackett:
+
+  jackett:
     image: linuxserver/jackett
     container_name: jackett
     environment:
@@ -30,6 +31,7 @@ services:
     ports:
       - 9117:9117
     restart: unless-stopped
+
   radarr:
     image: linuxserver/radarr
     container_name: radarr
@@ -45,7 +47,8 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
-transmission:
+
+  transmission:
     image: linuxserver/transmission
     container_name: transmission
     environment:
@@ -61,4 +64,4 @@ transmission:
       - 9091:9091
       - 51413:51413
       - 51413:51413/udp
-    restart: unless-stopped    
+    restart: unless-stopped
