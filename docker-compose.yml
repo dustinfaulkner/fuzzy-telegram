@@ -1,0 +1,18 @@
+---
+version: "2"
+services:
+  sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - UMASK_SET=022 #optional
+    volumes:
+      - /home/deckard/dockerconfig/sonarr:/config
+      - /home/deckard/PLEX/tv:/tv
+      - /home/deckard/PLEX/landingzone:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
